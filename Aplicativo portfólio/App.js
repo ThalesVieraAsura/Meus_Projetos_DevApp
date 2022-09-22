@@ -10,8 +10,6 @@ import { StatusBar } from 'expo-status-bar';
 import Modal from './Modal.js';
 import * as WebBrowser from 'expo-web-browser';
 
-
-
 function HomeScreen({navigation}) {
   return (
     <View style={{padding:15,flex:1}}>
@@ -32,12 +30,7 @@ function HomeScreen({navigation}) {
           <Ionicons name="ios-list-box" size={29} color='white' />
           <Text style={{color:'white',marginTop:8,marginLeft:8}}>Portfólio</Text>
         </TouchableOpacity>
-
-
-
         </ScrollView>
-
-
     </View>
   );
 }
@@ -46,20 +39,14 @@ function SobreScreen({navigation}) {
 
   const [showModal,setModal] = useState(false);
  
-
   const abrirModalContato = () =>{
      setModal(!showModal);
   }
-
- 
-
-
 
   let widthWindow = Dimensions.get('window').width - 30 -40;
   //https://scontent.ffln1-1.fna.fbcdn.net/v/t1.0-9/39339120_10215252457240059_3825243919885533184_n.jpg?_nc_cat=100&ccb=2&_nc_sid=09cbfe&_nc_eui2=AeFtKTYxrBXZYP_2kxfmoywu4TRqoCKwgsDhNGqgIrCCwED5a3INQMXIihI3ua89SmE&_nc_ohc=n_JY5Fo1JdAAX-IDHaS&_nc_ht=scontent.ffln1-1.fna&oh=8382319b91e7f7a05f1dea3c068d98a1&oe=5FCC3483
   return (
     <View style={{flex:1}}>
-
       {
         (showModal)?
         <Modal showModal={showModal} setModal={setModal}  />
@@ -81,21 +68,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quis velit ex. Nu
           <TouchableOpacity onPress={()=>abrirModalContato()} style={{...styles.btnNavigation,justifyContent:'center'}}>
             <Text style={{color:'white',fontSize:17}}>Entrar em contato!</Text>
           </TouchableOpacity>
-
 </View>
         
-
     </ScrollView>
-
 
 </View>
 </View>
   );
 }
 
-
 function PortfolioScreen({navigation,route}) {
-
   const [images,setImages] = useState([
     {
       img: require('./resources/img1.png'),
@@ -146,9 +128,7 @@ function PortfolioScreen({navigation,route}) {
   return (
     <View style={{padding:15,flex:1}}>
     <ScrollView contentContainerStyle={{padding:20}} style={styles.container}>
-        <Text style={styles.textHeader}>Os últimos projetos!</Text>
-        
-         
+        <Text style={styles.textHeader}>Os últimos projetos!</Text>                 
          
          {
            images.map(function(val){
@@ -157,32 +137,22 @@ function PortfolioScreen({navigation,route}) {
                   <Image 
                   style={{width:windowWidth,height:windowWidth*val.ratio,resizeMode:'stretch'}} source={val.img} />
 
-
                   <TouchableOpacity onPress={()=>abrirNavegador(val.website)} style={styles.botaoAbrirNavegador}><Text style={{textAlign:'center',color:'white',fontSize:18}}>Abrir no navegador!</Text></TouchableOpacity>
-
-
 
                 </View>
               )
            })
          }
-         
-        
-      
-
-      
+                             
     </ScrollView>
-
 
 </View>
   );
 }
 
-
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 function App() {
-
 
   return (
     <NavigationContainer>
@@ -212,7 +182,6 @@ function App() {
         activeTintColor: '#5f5380',
         inactiveTintColor: 'gray',
       }} 
-
       
       >
 
